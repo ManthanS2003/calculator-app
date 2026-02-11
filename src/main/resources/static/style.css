@@ -1,0 +1,190 @@
+/* =========================================
+   P R O P E R   F O R M   C A L C U L A T O R
+   exactly as shown in the screenshot
+   ========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: linear-gradient(145deg, #f1f5f9, #e4eaf1);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.wrapper {
+    width: 100%;
+    max-width: 500px;
+}
+
+/* main card – soft white with subtle shadow */
+.calculator-card {
+    background: white;
+    border-radius: 32px;
+    padding: 36px 32px;
+    box-shadow: 0 20px 35px -8px rgba(0, 0, 0, 0.1),
+                0 5px 12px -4px rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.6);
+}
+
+/* heading – exactly "spring calculator" */
+h1 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #0b1e33;
+    margin-bottom: 28px;
+    padding-bottom: 16px;
+    border-bottom: 2px solid #e0e7ef;
+    letter-spacing: -0.02em;
+    text-transform: lowercase;
+}
+
+/* form fields */
+.field {
+    margin-bottom: 24px;
+}
+
+.field label {
+    display: block;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #3a546d;
+    margin-bottom: 6px;
+}
+
+/* inputs and select – consistent style */
+input, select {
+    width: 100%;
+    padding: 16px 18px;
+    font-size: 1rem;
+    border: 2px solid #dfe7ef;
+    border-radius: 18px;
+    background: #ffffff;
+    transition: all 0.2s;
+    outline: none;
+    color: #0f2a40;
+    font-weight: 500;
+}
+
+input:focus, select:focus {
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.08);
+}
+
+input::placeholder {
+    color: #9bb0c2;
+    font-weight: 400;
+}
+
+/* custom dropdown arrow */
+.select-container {
+    position: relative;
+}
+
+.select-container select {
+    appearance: none;
+    padding-right: 48px;
+}
+
+.select-container i {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #5e7e99;
+    pointer-events: none;
+    font-size: 0.9rem;
+}
+
+/* ===== CALCULATE BUTTON ===== */
+button {
+    width: 100%;
+    padding: 18px;
+    background: linear-gradient(145deg, #1e3a5f, #0b2a4a);
+    color: white;
+    border: none;
+    border-radius: 40px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    cursor: pointer;
+    transition: all 0.2s;
+    margin-top: 12px;
+    box-shadow: 0 8px 18px -6px rgba(15, 45, 75, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+button i {
+    font-size: 1.2rem;
+}
+
+button:hover {
+    background: linear-gradient(145deg, #254f73, #123553);
+    transform: scale(0.98);
+    box-shadow: 0 12px 22px -8px rgba(15, 45, 75, 0.4);
+}
+
+/* ===== RESULT AREA – exactly as screenshot ===== */
+.result-area {
+    margin-top: 32px;
+    padding: 24px 20px;
+    background: #f0f7fe;
+    border-radius: 24px;
+    border: 1px solid #cbddee;
+    text-align: center;
+}
+
+.result-area.error {
+    background: #fef3f2;
+    border-color: #fbc4c4;
+}
+
+.result-label {
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: #2b6c9e;
+    margin-bottom: 6px;
+}
+
+.error .result-label {
+    color: #b33a3a;
+}
+
+.result-number {
+    font-size: 2.4rem;
+    font-weight: 700;
+    color: #0a3146;
+    line-height: 1.2;
+    word-break: break-word;
+}
+
+.error .result-number {
+    color: #a51b1b;
+}
+
+/* responsive adjustments */
+@media (max-width: 480px) {
+    .calculator-card {
+        padding: 28px 20px;
+    }
+    h1 {
+        font-size: 1.5rem;
+    }
+    .result-number {
+        font-size: 2rem;
+    }
+}
